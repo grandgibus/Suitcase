@@ -69,6 +69,7 @@ public class CNRD {
         }else if(!up && volumeOffset - 0.1D > -1.0D){
             volumeOffset -= 0.1D;
         }
+        CNRD.application.setVolume();
     }
 
     private void init() {
@@ -119,21 +120,6 @@ public class CNRD {
 
 
             player.addMediaPlayerEventListener(new MediaPlayerEventAdapter() {
-
-//                @Override
-//                public void playing(MediaPlayer mediaPlayer) {
-//                    videoPlaying = true;
-//                }
-//
-//
-//                @Override
-//                public void positionChanged(MediaPlayer mediaPlayer, float newPosition) {
-//                    if(!videoVisible && videoPlaying){
-//                        CNRD.debug("Playing video");
-//                        showVideo();
-//                        setVolume();
-//                    }
-//                }
 
                 @Override
                 public void mediaPlayerReady(MediaPlayer mediaPlayer){
@@ -221,7 +207,9 @@ public class CNRD {
 
             if(!panel.hasEnded()){
 
-                panel.choiceMenu.removeCurrentChoice();
+                if(Data.REMOVE_CHOICE_AFTER_PLAYED){
+                    panel.choiceMenu.removeCurrentChoice();
+                }
 
                 //If should switch to end menu
                 if(!panel.choiceMenu.hasChoicesLeft()){

@@ -9,6 +9,8 @@ public class Data {
     public static final String TITLE = "Concours National de la Resistance et Déportation";
     public static final String INFO_NO_VLC = "VLC n'a pas été détecté, le programme ne peut pas se lancer";
 
+    public static final boolean REMOVE_CHOICE_AFTER_PLAYED = false;
+
     public static String getImage(String src){
         return getAssetsLink() + "img/" + src;
     }

@@ -45,9 +45,8 @@ public class InputOutputsControl {
 
             buttonPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
             buttonLedsPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_23);
-            buttonLedsPin.high();
 
-            volumeUpPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_03, PinPullResistance.PULL_DOWN);
+            volumeUpPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_28, PinPullResistance.PULL_DOWN);
             volumeDownPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_25, PinPullResistance.PULL_DOWN);
         }
 
@@ -124,6 +123,7 @@ public class InputOutputsControl {
             if(!volumeUpPressed && volumeUpPin.isHigh()){
                 volumeUpPressed = true;
                 CNRD.changeVolume(true);
+                System.out.println("Button up");
             }else if(volumeUpPressed && volumeUpPin.isLow()){
                 volumeUpPressed = false;
             }
@@ -131,6 +131,7 @@ public class InputOutputsControl {
             if(!volumeDownPressed && volumeDownPin.isHigh()){
                 volumeDownPressed = true;
                 CNRD.changeVolume(false);
+                System.out.println("Button down");
             }else if(volumeDownPressed && volumeDownPin.isLow()){
                 volumeDownPressed = false;
             }
@@ -162,26 +163,22 @@ public class InputOutputsControl {
 
         public static void init() {
 
-            KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
+            KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(ke -> {
+                synchronized (IsKeyPressed.class) {
+                    switch (ke.getID()) {
+                        case KeyEvent.KEY_PRESSED:
+                            if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
+                                wPressed = true;
+                            }
+                            break;
 
-                @Override
-                public boolean dispatchKeyEvent(KeyEvent ke) {
-                    synchronized (IsKeyPressed.class) {
-                        switch (ke.getID()) {
-                            case KeyEvent.KEY_PRESSED:
-                                if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
-                                    wPressed = true;
-                                }
-                                break;
-
-                            case KeyEvent.KEY_RELEASED:
-                                if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
-                                    wPressed = false;
-                                }
-                                break;
-                        }
-                        return false;
+                        case KeyEvent.KEY_RELEASED:
+                            if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
+                                wPressed = false;
+                            }
+                            break;
                     }
+                    return false;
                 }
             });
         }
