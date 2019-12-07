@@ -8,15 +8,15 @@ Elle possède aussi des enceintes qui permet d'entendre les vidéos-documentaire
 ![Suitcase inferior part](https://i.imgur.com/cAoCVII.jpg)
 
 ## Conception structurelle
-La quasi intégralité de la modélisation CAD a été réalisée sur OnShape, ce qui finalement se fut avéré être une erreur de part la complexité de l'assemblage à manipuler comportant trop de pièces pour être efficace.
+La quasi intégralité de la modélisation CAD a été réalisée sur OnShape, ce qui s'est finalement avéré être une erreur de par la complexité de l'assemblage à manipuler, comportant trop de pièces pour être efficacement développé.
 
-Le projet peut être vu à: https://cad.onshape.com/documents/2e7daea08c12ab10e9ac8ab1/w/2863503051dc8fdf42f90177/e/47789e8cf90c5e76813362f4
+Le projet peut être vu sur: https://cad.onshape.com/documents/2e7daea08c12ab10e9ac8ab1/w/2863503051dc8fdf42f90177/e/47789e8cf90c5e76813362f4
 
 ![drawing](https://i.imgur.com/jm6Ic2s.png)
 
 ![drawing](https://i.imgur.com/etDDnJC.png)
 
-La première étape a été la modélisation de la valise, qui est une vieille valise en carton des années 1960. Il a ensuite fallu modélisé l’intégralité des autres composants:
+La première étape a été la modélisation de la valise, qui est une vieille valise en carton des années 1960. Il a ensuite fallu modéliser l’intégralité des autres composants:
 
  - Ecran IPS récupéré d'un ancien pc portable
  - Carte driver de l'écran
@@ -27,9 +27,9 @@ La première étape a été la modélisation de la valise, qui est une vieille v
  - Noctua fan
  - Divers (Jack plug male/female, pushbutton, rotary encoder, leds, etc..)
 
-La deuxième étape a été de modélisé un cadre sur la partie supérieure et inférieure, divisé en 6 portions pour pouvoir être imprimées dans une Prusa i3 MK3 en PETG. Le cadre est fixé à l'aide de zipties fixées sur des crochets qui sont eux-mêmes rivetés à la valise. Les poinçons sur les bords du cadre permettent de faire pression sur les bords de la valise afin de stabiliser le cadre.
+La deuxième étape a été de modéliser un cadre sur la partie supérieure et inférieure, divisé en 6 portions pour pouvoir être imprimées sur une Prusa i3 MK3 en PETG. Le cadre est fixé à l'aide de zipties reliées à des crochets qui sont eux-mêmes rivetés à la valise. Les poinçons sur les bords du cadre permettent de faire pression sur les bords de la valise afin de stabiliser le cadre.
 
-Tous les composants du circuit sont fixés sur le cadre, et finalement des caches sont ajoutés pour masquer l'intérieur de la valise. Le cache supérieur est imprimé en 6 pièces, et le cache inférieur fraisé sur une fraiseuse d'un ami.
+Tous les composants du circuit sont fixés sur le cadre, et finalement des caches sont ajoutés pour masquer l'intérieur de la valise. Le cache supérieur est imprimé en 6 pièces, et le cache inférieur a été fraisé sur une fraiseuse d'un ami.
 
 La carte et la frise chronologique sont montés sur des pilliers tenants sur le cadre.
 
@@ -44,7 +44,7 @@ Le programme est lancé en tant que service debian lors du boot de la carte.
 L'integralité du logiciel est programmé en Java avec pour framework GUI Swing. La lecture de vidéo est effectuée avec VLC grâce à la lib [vlcj](https://github.com/caprica/vlcj) de caprica.
 Le contrôle du GPIO est fait grâce [pi4j](https://pi4j.com/1.2/index.html)
 
-La programmation du déclenchement des leds sur la carte et la frise est interprétée grâce a des fichiers json.
+La programmation du déclenchement des leds sur la carte et la frise est interprétée grâce a des fichiers de configurations notés en json.
 Les fichiers jsons sont générés automatiquement grâce à une application simple développée sous electron qui permet de rapidement configurer les moments où les leds s'allument et s'éteignent.
 
 ![led programming tool](https://i.imgur.com/Yf1hVsy.png)
@@ -58,7 +58,7 @@ L'interface se présente de cette manière une fois le système démarré:
 
 ![menu](https://i.imgur.com/ZJy6SyE.png)
 
-Le point représente la sélection, un appui court change la sélection et un appui long les démarrent.
+Le point représente la sélection, un appui court change la sélection et un appui long les démarre.
 Tous les graphismes et montages sont réalisés avec la suite Adobe.
 
 Malgré de très nombreux problèmes rencontrés, la partie technique de la valise étant mon premier réel projet aussi développé, il fonctionne (avec un retard de seulement une année). Il y a énormément d'autres choses à dire mais qui ne tiennent pas dans un résumé.
