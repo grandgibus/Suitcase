@@ -61,7 +61,7 @@ L'interface se présente de cette manière une fois le système démarré:
 Le point représente la sélection, un appui court change la sélection et un appui long les démarrent.
 Tous les graphismes et montages sont réalisés avec la suite Adobe.
 
-Malgré de très nombreux problèmes rencontrés, la partie technique de la valise étant mon premier réel projet aussi développé, il fonctionne (avec un retard de seulement une année). Il y a énormément d'autres choses à dire mais de toute façon personne ne va jamais lire ça et c'est pas intéressant.
+Malgré de très nombreux problèmes rencontrés, la partie technique de la valise étant mon premier réel projet aussi développé, il fonctionne (avec un retard de seulement une année). Il y a énormément d'autres choses à dire mais qui ne tiennent pas dans un résumé.
 
 Merci à la classe et leur travail sur la recherche et la réalisation des différents parcours historiques, à Mme DERUYTER et Mme SOGLIUZZO, et à internet qui permet d'apprendre l'intégralité des compétences requises à la réalisation de ce projet gratuitement
 
